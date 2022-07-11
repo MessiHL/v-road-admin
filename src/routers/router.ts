@@ -4,13 +4,20 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
  * @Autor: hl
  * @Date: 2022-07-11 15:19:51
  * @LastEditors: hl
- * @LastEditTime: 2022-07-11 15:25:05
+ * @LastEditTime: 2022-07-11 17:26:53
  */
+// * 导入所有router
+const metaRouters = import.meta.globEager("./modules/*.ts");
 
-// 路由合集
+// * 处理路由表
 export const routerArray: RouteRecordRaw[] = [];
+Object.keys(metaRouters).forEach(item => {
+	Object.keys(metaRouters[item]).forEach((key: any) => {
+		routerArray.push(...metaRouters[item][key]);
+	});
+});
 
-// const metaRouters = import.meta.globEager("./modules/*.ts");
+console.log("routerArray:", routerArray);
 
 const routes: RouteRecordRaw[] = [
 	{ path: "/", redirect: { name: "login" } },
