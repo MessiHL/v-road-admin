@@ -1,6 +1,5 @@
-# Vue 3.2 + TypeScript + Pinia + Vite2 + Element-Plus 管理系统（开源啦 🎉🎉）
+# v-road-admins 管理系统（开源啦 🎉🎉）
 
-![banner](https://iamge-1259297738.cos.ap-chengdu.myqcloud.com/md/banner.png)
 
 ### 前言 📖
 
@@ -9,9 +8,8 @@ v-road-admin ，Vue 3.2 + TypeScript + Pinia + Vite2 + Element-Plus 管理系统
 
 ### 项目相关文档 📚
 
-- 项目更新日志：[CHANGELOG.md](./CHANGELOG.md)
 
-- 代码规范文档：[STANDARD.md](./STANDARD.md)
+- 代码规范文档(by Geeker Admin)：[STANDARD.md](./STANDARD.md)
 
 ### 一、在线预览 👀
 
@@ -162,10 +160,5 @@ v-road-admin
 | :-----------------------------------------------------------------------: | :-----------------------------------------------------------------------------: | :---------------------------------------------------------------------------: | :---------------------------------------------------------------------------: |
 |                              last 2 versions                              |                                 last 2 versions                                 |                                last 2 versions                                |                                last 2 versions                                |
 
-### 九、项目后台接口 🧩
 
-> 项目后台接口完全采用 Mock 数据，感谢以下 Mock 平台支持
-
-- FastMock： https://www.fastmock.site/
-- EasyMock：https://mock.mengxuegu.com/
 
