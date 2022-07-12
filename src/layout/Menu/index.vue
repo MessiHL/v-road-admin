@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-11 17:52:29
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 11:44:38
+ * @LastEditTime: 2022-07-12 14:42:38
 -->
 <template>
 	<div
@@ -67,6 +67,18 @@ const getTestData = () => {
 			icon: "home-filled",
 			title: "首页",
 			path: "/home/index"
+		},
+		{
+			icon: "list",
+			title: "表格",
+			path: "/table",
+			children: [
+				{
+					path: "/table/useComponent",
+					title: "useComponent",
+					icon: "table"
+				}
+			]
 		},
 		{
 			icon: "list",
