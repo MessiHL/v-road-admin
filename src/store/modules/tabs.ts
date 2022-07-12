@@ -1,7 +1,14 @@
+/*
+ * @Description:
+ * @Autor: hl
+ * @Date: 2022-07-11 15:26:21
+ * @LastEditors: hl
+ * @LastEditTime: 2022-07-12 10:42:53
+ */
 import { defineStore } from "pinia";
 import { TabPaneProps } from "element-plus";
 import { TabsState } from "../interface";
-import { HOME_URL, TABS_BLACK_LIST } from "@/config/config";
+import { HOME_URL, TABS_BLACK_LIST } from "@/config";
 import piniaPersistConfig from "@/config/piniaPersist";
 import router from "@/routers/index";
 

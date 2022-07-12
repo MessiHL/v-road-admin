@@ -1,17 +1,11 @@
-<!--
- * @Description: 
- * @Autor: hl
- * @Date: 2022-07-11 16:42:05
- * @LastEditors: hl
- * @LastEditTime: 2022-07-11 17:24:39
--->
 <template>
-	<div>home index</div>
+	<div class="home flx-center">
+		<img class="home-bg" src="@/assets/images/welcome.png" alt="welcome" />
+	</div>
 </template>
-<script
-	setup
-	lang="ts"
-	name="home
-"
-></script>
-<style lang="scss"></style>
+
+<script setup lang="ts" name="home"></script>
+
+<style scoped lang="scss">
+@import "./index.scss";
+</style>

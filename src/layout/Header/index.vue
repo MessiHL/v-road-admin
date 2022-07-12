@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-11 17:51:56
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 10:20:50
+ * @LastEditTime: 2022-07-12 11:44:33
 -->
 <template>
 	<div class="header">
@@ -21,6 +21,6 @@ import CollapseIcon from "./components/CollapseIcon.vue";
 import Breadcrumb from "./components/Breadcrumb.vue";
 import Fullscreen from "./components/Fullscreen.vue";
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 @import "./index.scss";
 </style>

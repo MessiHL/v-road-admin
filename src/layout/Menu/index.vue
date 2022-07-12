@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-11 17:52:29
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 09:52:24
+ * @LastEditTime: 2022-07-12 11:44:38
 -->
 <template>
 	<div
@@ -349,6 +349,6 @@ const listeningWidow = () => {
 };
 listeningWidow();
 </script>
-<style lang="scss">
+<style scoped lang="scss">
 @import "./index.scss";
 </style>
