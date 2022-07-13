@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-06 17:18:06
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 16:13:18
+ * @LastEditTime: 2022-07-13 09:56:30
  */
 import { reactive, toRefs, onMounted, computed } from "vue";
 import { Table } from "./../types/table";
@@ -16,7 +16,7 @@ export const useTable = (api: (params: any) => Promise<any>, initParam: object =
 		// 分页
 		pageable: {
 			pageNum: 1,
-			pageSize: 50,
+			pageSize: 20,
 			total: 0
 		},
 		// 查询参数
@@ -43,151 +43,16 @@ export const useTable = (api: (params: any) => Promise<any>, initParam: object =
 		}
 	});
 
-	const testData: any = {
-		code: 200,
-		msg: "成功",
-		data: {
-			datalist: [
-				{
-					id: "66380732484112937878",
-					username: "康刚",
-					gender: 1,
-					age: 22,
-					idCard: "66380732484112937878",
-					email: "j.cdgwpmxml@kfywqg.mc",
-					address: "贵州省 铜仁市",
-					createTime: "2015-03-07 13:36:52",
-					status: 0,
-					avatar: "http://dummyimage.com/100x100/f2bf79&text=薛刚"
-				},
-				{
-					id: "47635758736436981631",
-					username: "彭平",
-					gender: 2,
-					age: 26,
-					idCard: "47635758736436981631",
-					email: "l.dxjivzx@tjcbjp.kz",
-					address: "重庆 重庆市",
-					createTime: "2019-04-06 05:28:59",
-					status: 1,
-					avatar: "http://dummyimage.com/100x100/9c79f2&text=龚军"
-				},
-				{
-					id: "78955722111593047419",
-					username: "许娜",
-					gender: 2,
-					age: 23,
-					idCard: "78955722111593047419",
-					email: "y.qwrhe@elqyv.tz",
-					address: "河南省 周口市",
-					createTime: "2001-04-30 23:20:54",
-					status: 1,
-					avatar: "http://dummyimage.com/100x100/79f279&text=夏洋"
-				},
-				{
-					id: "85035773438413452662",
-					username: "孔强",
-					gender: 1,
-					age: 18,
-					idCard: "85035773438413452662",
-					email: "o.cihsrq@hdyjeifo.an",
-					address: "福建省 漳州市",
-					createTime: "1990-12-20 15:01:26",
-					status: 1,
-					avatar: "http://dummyimage.com/100x100/f2799c&text=朱秀兰"
-				},
-				{
-					id: "58436480491367066221",
-					username: "任平",
-					gender: 1,
-					age: 26,
-					idCard: "58436480491367066221",
-					email: "l.kygyoqel@ootei.bf",
-					address: "上海 上海市",
-					createTime: "1996-09-30 05:14:39",
-					status: 1,
-					avatar: "http://dummyimage.com/100x100/79bff2&text=康平"
-				},
-				{
-					id: "86478330373343116832",
-					username: "孟刚",
-					gender: 2,
-					age: 23,
-					idCard: "86478330373343116832",
-					email: "s.qtzgwwuob@jvpdnpu.be",
-					address: "新疆维吾尔自治区 和田地区",
-					createTime: "2001-11-16 16:40:15",
-					status: 0,
-					avatar: "http://dummyimage.com/100x100/e3f279&text=马霞"
-				},
-				{
-					id: "81874748873297864312",
-					username: "郑勇",
-					gender: 1,
-					age: 24,
-					idCard: "81874748873297864312",
-					email: "v.lklyi@idphjxd.ev",
-					address: "新疆维吾尔自治区 克孜勒苏柯尔克孜自治州",
-					createTime: "2013-02-08 14:42:39",
-					status: 1,
-					avatar: "http://dummyimage.com/100x100/de79f2&text=潘秀英"
-				},
-				{
-					id: "17970559935826451916",
-					username: "雷敏",
-					gender: 1,
-					age: 20,
-					idCard: "17970559935826451916",
-					email: "l.qflkhce@wkqtsbn.mg",
-					address: "香港特别行政区 九龙",
-					createTime: "1994-10-24 13:35:17",
-					status: 0,
-					avatar: "http://dummyimage.com/100x100/79f2ba&text=张霞"
-				},
-				{
-					id: "87856326443328158396",
-					username: "龚明",
-					gender: 2,
-					age: 17,
-					idCard: "87856326443328158396",
-					email: "l.pzuvzdf@adnmorkyk.uk",
-					address: "江西省 宜春市",
-					createTime: "2015-07-26 22:42:00",
-					status: 1,
-					avatar: "http://dummyimage.com/100x100/f29779&text=方秀英"
-				},
-				{
-					id: "36403135684354476172",
-					username: "郭刚",
-					gender: 1,
-					age: 18,
-					idCard: "36403135684354476172",
-					email: "p.tlepo@tfq.gf",
-					address: "台湾 基隆市",
-					createTime: "1974-04-07 05:33:00",
-					status: 0,
-					avatar: "http://dummyimage.com/100x100/797ef2&text=锺娟"
-				}
-			],
-			pageNum: 1,
-			pageSize: 10,
-			total: 2000
-		}
-	};
-
 	//  获取表格数据
-	const getTableList = () => {
+	const getTableList = async () => {
 		try {
 			//  先更新查询参数
 			updateTotalParam();
 			Object.assign(state.totalParam, initParam);
-			// TODO 通过API获取数据
-			// const { data } = await api(state.totalParam);
-			state.tableData = isPageable ? testData.data : testData;
+			const { data } = await api(state.totalParam);
 
-			console.log(state.tableData, "state.tableData");
-
-			const { pageNum, pageSize, total } = testData;
+			state.tableData = isPageable ? data.datalist : data;
+			const { pageNum, pageSize, total } = data;
 			isPageable && updatePageable({ pageNum, pageSize, total });
 		} catch (error) {
 			console.log(error);
@@ -206,6 +71,7 @@ export const useTable = (api: (params: any) => Promise<any>, initParam: object =
 				nowSearchParam[key] = state.searchParam[key];
 			}
 		}
+
 		Object.assign(state.totalParam, nowSearchParam, isPageable ? pageParam.value : {});
 	};
 
