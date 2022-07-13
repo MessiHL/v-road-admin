@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-11 15:18:31
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 15:33:01
+ * @LastEditTime: 2022-07-13 11:43:31
  */
 import router from "@/routers/router";
 import { HOME_URL } from "@/config";
@@ -15,8 +15,6 @@ import NProgress from "@/config/nprogress";
 router.beforeEach((to, from, next) => {
 	// TODO 清除请求 权限判断 token 判断
 	NProgress.start();
-	console.log(to, from, next);
-
 	const authStore = AuthStore();
 	// * Dynamic Router(动态路由，根据后端返回的菜单数据生成的一维数组)
 	const dynamicRouter = authStore.dynamicRouter;

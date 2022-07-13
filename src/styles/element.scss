@@ -19,14 +19,17 @@
 		display: flex;
 		margin-bottom: 10px;
 		.el-form {
-			max-width: 1260px;
+			// max-width: 1260px;
 			.el-form-item {
+				width: 100%;
 				margin-right: 5px;
-				.el-input,
-				.el-select,
-				.el-date-editor--timerange {
-					width: 210px;
-				}
+				
+				
+				// .el-input,
+				// .el-select,
+				// .el-date-editor--timerange {
+				// 	 width: 210px;
+				// }
 				.el-date-editor--datetimerange,
 				.el-date-editor--daterange {
 					width: 400px;

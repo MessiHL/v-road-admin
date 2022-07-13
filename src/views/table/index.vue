@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 14:39:38
  * @LastEditors: hl
- * @LastEditTime: 2022-07-13 10:28:58
+ * @LastEditTime: 2022-07-13 14:10:30
 -->
 <template>
 	<div class="table-box">
@@ -28,7 +28,7 @@ const columns: Partial<any>[] = [
 	},
 	{
 		type: "index",
-		label: "#",
+		label: "序号",
 		width: 80
 	},
 	{
@@ -56,7 +56,7 @@ const columns: Partial<any>[] = [
 		label: "创建时间",
 		width: 200,
 		sortable: true,
-		search: true,
+		search: false,
 		searchType: "datetimerange",
 		initSearchParam: ["2022-04-05 00:00:00", "2022-05-10 23:59:59"]
 	},
@@ -68,6 +68,31 @@ const columns: Partial<any>[] = [
 	{
 		prop: "address",
 		label: "居住地址",
+		search: true
+	},
+	{
+		prop: "address",
+		label: "居住地址",
+		search: true
+	},
+	{
+		prop: "address",
+		label: "居住地址",
+		search: true
+	},
+	{
+		prop: "address",
+		label: "居住地址",
+		search: true
+	},
+	{
+		prop: "address",
+		label: "居住地址",
+		search: true
+	},
+	{
+		prop: "address",
+		label: "居住居住地址地址",
 		search: true
 	},
 	{
