@@ -17,21 +17,16 @@
 	// 表格 search 样式
 	.table-search {
 		display: flex;
-		margin-bottom: 10px;
+		margin-bottom: 0;
 		.el-form {
 			 width: 100%;
 			.el-form-item {
 				width: 100%;
 				margin-right: 5px;
+				margin-bottom: 6px;
 				.el-select {
 					width: 100%;
 				}
-				
-				// .el-input,
-				// .el-select,
-				// .el-date-editor--timerange {
-				// 	 width: 210px;
-				// }
 				.el-date-editor--datetimerange,
 				.el-date-editor--daterange {
 					width: 400px;
@@ -66,13 +61,13 @@
 		.header-button-lf {
 			float: left;
 			.el-button {
-				margin-bottom: 20px;
+				margin-bottom: 6px;
 			}
 		}
 		.header-button-ri {
 			float: right;
 			.el-button {
-				margin-bottom: 20px;
+				margin-bottom: 6px;
 			}
 		}
 	}
@@ -105,7 +100,12 @@
 			white-space: nowrap;
 		}
 		.el-table__row {
-			height: 52px;
+			.cell {
+				height: 24px;
+				padding-left:6px;
+				font-size: 14px;
+				line-height: 24px;
+			}
 		}
 
 		// 解决表格数据为空时样式不居中问题(仅在element-plus中)
@@ -133,7 +133,7 @@
 	.el-pagination {
 		display: flex;
 		justify-content: flex-end;
-		margin: 23px 0 10px;
+		margin-top: 6px;
 	}
 }
 

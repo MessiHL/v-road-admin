@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 14:39:38
  * @LastEditors: hl
- * @LastEditTime: 2022-07-14 14:57:08
+ * @LastEditTime: 2022-07-14 16:00:33
 -->
 <template>
 	<div class="table-box">
@@ -53,13 +53,13 @@ const initParam = reactive({ type: 1 });
 const columns: Partial<any>[] = [
 	{
 		type: "selection",
-		width: 80,
+		width: 42,
 		fixed: "left"
 	},
 	{
 		type: "index",
 		label: "序号",
-		width: 80
+		width: 60
 	},
 	{
 		type: "expand",
@@ -84,7 +84,26 @@ const columns: Partial<any>[] = [
 	{
 		prop: "idCard",
 		label: "身份证号",
-		search: true
+		search: true,
+		width: 200
+	},
+	{
+		prop: "idCard",
+		label: "身份证号",
+		search: true,
+		width: 200
+	},
+	{
+		prop: "idCard",
+		label: "身份证号",
+		search: true,
+		width: 200
+	},
+	{
+		prop: "idCard",
+		label: "身份证号",
+		search: true,
+		width: 200
 	},
 	{
 		prop: "createTime",
@@ -103,7 +122,8 @@ const columns: Partial<any>[] = [
 	{
 		prop: "address",
 		label: "居住地址",
-		search: true
+		search: true,
+		width: 360
 	},
 	{
 		prop: "status",

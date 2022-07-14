@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-11 17:21:55
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 14:06:38
+ * @LastEditTime: 2022-07-14 15:37:44
 -->
 <template>
 	<el-container>
@@ -21,7 +21,7 @@
 					</router-view>
 				</section>
 			</el-main>
-			<el-footer><Footer></Footer></el-footer>
+			<!-- <el-footer><Footer></Footer></el-footer> -->
 		</el-container>
 	</el-container>
 </template>
@@ -29,7 +29,7 @@
 import Menu from "./Menu/index.vue";
 import Header from "./Header/index.vue";
 import Tabs from "./Tabs/index.vue";
-import Footer from "./Footer/index.vue";
+// import Footer from "./Footer/index.vue";
 import cacheRouter from "@/routers/cacheRouter";
 </script>
 <style lang="scss">
