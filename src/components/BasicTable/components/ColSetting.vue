@@ -1,3 +1,10 @@
+<!--
+ * @Description: 
+ * @Autor: hl
+ * @Date: 2022-07-12 15:38:17
+ * @LastEditors: hl
+ * @LastEditTime: 2022-07-14 11:14:32
+-->
 <template>
 	<!-- 列显隐设置 -->
 	<el-drawer title="列设置" v-model="drawerVisible" size="400px">
@@ -20,7 +27,7 @@
 
 <script setup lang="ts" name="colSetting">
 import { ref, nextTick } from "vue";
-import { ColumnProps } from "@/components/BasicTable/interface";
+import { ColumnProps } from "@/components/BasicTable/types/table";
 
 const props = defineProps<{ colSetting: Partial<ColumnProps>[]; tableRef: any }>();
 

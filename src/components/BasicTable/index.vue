@@ -64,9 +64,9 @@
 					:fixed="item.fixed"
 				>
 					<!-- 自定义 header (使用组件渲染 tsx 语法) -->
-					<template #header v-if="item.renderHeader">
+					<!-- <template #header v-if="item.renderHeader">
 						<component :is="item.renderHeader" :row="item"> </component>
-					</template>
+					</template> -->
 
 					<!-- 自定义配置每一列 slot（使用作用域插槽） -->
 					<template #default="scope">
@@ -119,8 +119,9 @@
 import { ref } from "vue";
 import { useTable } from "./hooks/useTable";
 import { useSelection } from "./hooks/useSelection";
+import { useSearchForm } from "../SearchForm/hooks/userSearchForm";
 import { Refresh, Operation, Search } from "@element-plus/icons-vue";
-import { ColumnProps } from "@/components/BasicTable/interface";
+import { ColumnProps } from "@/components/BasicTable/types/table";
 import { filterEnum, defaultFormat } from "@/utils/util";
 import SearchForm from "@/components/SearchForm/index.vue";
 import Pagination from "@/components/Pagination/index.vue";
@@ -160,6 +161,10 @@ const { selectionChange, getRowKeys, selectedListIds, isSelected } = useSelectio
 // 表格操作 Hooks
 const { tableData, pageable, searchParam, initSearchParam, getTableList, search, reset, handleSizeChange, handleCurrentChange } =
 	useTable(props.requestApi, props.initParam, props.pagination);
+
+// 查询条件操作 Hooks
+const { setSearchTool } = useSearchForm();
+
 // 表格列配置项处理（添加 isShow 属性，控制显示/隐藏）
 const tableColumns = ref<Partial<ColumnProps>[]>();
 tableColumns.value = props.columns.map(item => {
@@ -170,7 +175,7 @@ tableColumns.value = props.columns.map(item => {
 });
 
 // 过滤需要搜索的配置项
-const searchColumns = props.columns.filter(item => item.search);
+const searchColumns = setSearchTool(props.columns.filter(item => item.search));
 
 // 设置搜索表单的默认值
 searchColumns.forEach(column => {

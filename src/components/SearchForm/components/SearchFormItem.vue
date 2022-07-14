@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 15:38:17
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 15:48:34
+ * @LastEditTime: 2022-07-14 11:20:21
 -->
 <template>
 	<!-- 文本框 -->
@@ -80,13 +80,12 @@
 </template>
 
 <script setup lang="ts" name="searchFormItem">
-import { ColumnProps } from "@/components/BasicTable/interface";
+import { ColumnProps } from "@/components/BasicTable/types/table";
 
 interface SearchFormItem {
 	item: Partial<ColumnProps>; // 具体每一个搜索项的配置
 	searchParam: any; // 搜索参数
 }
-
 // 是否有清除按钮 (当搜索项有默认值时，清除按钮不显示)
 const clearable = (item: Partial<ColumnProps>) => {
 	return item.initSearchParam == null || item.initSearchParam == undefined;

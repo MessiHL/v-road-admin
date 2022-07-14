@@ -19,11 +19,13 @@
 		display: flex;
 		margin-bottom: 10px;
 		.el-form {
-			// max-width: 1260px;
+			 width: 100%;
 			.el-form-item {
 				width: 100%;
 				margin-right: 5px;
-				
+				.el-select {
+					width: 100%;
+				}
 				
 				// .el-input,
 				// .el-select,

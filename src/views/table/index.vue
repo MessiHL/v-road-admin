@@ -3,15 +3,45 @@
  * @Autor: hl
  * @Date: 2022-07-12 14:39:38
  * @LastEditors: hl
- * @LastEditTime: 2022-07-13 14:10:30
+ * @LastEditTime: 2022-07-14 14:57:08
 -->
 <template>
 	<div class="table-box">
-		<BasicTable ref="refBasicTable" :requestApi="getUserList" :initParam="initParam" :columns="columns"></BasicTable>
+		<BasicTable ref="refBasicTable" :requestApi="getUserList" :initParam="initParam" :columns="columns">
+			<template #tableHeader="scope">
+				<!-- 表格 header 按钮 -->
+				<el-button type="danger" :icon="Delete" plain :disabled="!scope.isSelected" @click="batchDelete(scope.ids)">
+					批量删除用户
+				</el-button>
+			</template>
+			<!-- Expand  表格展开-->
+			<template #expand="scope">
+				{{ scope.row }}
+			</template>
+			<!-- 行内编辑示例 -->
+			<template #status="scope">
+				<!-- 如果插槽的值为 el-switch，第一次加载会默认触发 switch 的 @change 方法，所有在外层包一个盒子，点击触发盒子 click 方法 -->
+				<div @click="changeStatus(scope.row)">
+					<el-switch
+						:value="scope.row.status"
+						:active-text="scope.row.status === 1 ? '启用' : '禁用'"
+						:active-value="1"
+						:inactive-value="0"
+					/>
+				</div>
+			</template>
+			<!-- 行内按钮 示例 -->
+			<template #operation="scope">
+				<el-button type="primary" link :icon="View" @click="openDrawer('查看', scope.row)">查看</el-button>
+				<el-button type="primary" link :icon="EditPen" @click="openDrawer('编辑', scope.row)">编辑</el-button>
+				<el-button type="primary" link :icon="Delete" @click="deleteAccount(scope.row)">删除</el-button>
+			</template>
+		</BasicTable>
 	</div>
 </template>
 <script setup lang="ts" name="tableUseComponent">
 import { ref, reactive } from "vue";
+import { View, Delete, EditPen } from "@element-plus/icons-vue";
 import { genderType } from "@/utils/serviceDict";
 import BasicTable from "@/components/BasicTable/index.vue";
 
@@ -29,6 +59,11 @@ const columns: Partial<any>[] = [
 	{
 		type: "index",
 		label: "序号",
+		width: 80
+	},
+	{
+		type: "expand",
+		label: "明细",
 		width: 80
 	},
 	{
@@ -71,34 +106,9 @@ const columns: Partial<any>[] = [
 		search: true
 	},
 	{
-		prop: "address",
-		label: "居住地址",
-		search: true
-	},
-	{
-		prop: "address",
-		label: "居住地址",
-		search: true
-	},
-	{
-		prop: "address",
-		label: "居住地址",
-		search: true
-	},
-	{
-		prop: "address",
-		label: "居住地址",
-		search: true
-	},
-	{
-		prop: "address",
-		label: "居住居住地址地址",
-		search: true
-	},
-	{
 		prop: "status",
 		label: "用户状态",
-		sortable: true,
+		sortable: false,
 		width: 160
 	},
 	// {
@@ -114,5 +124,23 @@ const columns: Partial<any>[] = [
 		fixed: "right"
 	}
 ];
+
+// 批量删除
+const batchDelete = (ids: string[]) => {
+	console.log(ids);
+	refBasicTable.value.refresh();
+};
+
+const openDrawer = (title: string, row: any) => {
+	console.log(title, row.username);
+};
+
+const deleteAccount = (row: any) => {
+	console.log(row.username);
+};
+
+const changeStatus = (row: any) => {
+	row.status = row.status == 1 ? 0 : 1;
+};
 </script>
 <style lang="scss"></style>

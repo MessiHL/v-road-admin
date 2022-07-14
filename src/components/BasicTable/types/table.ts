@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-06 17:19:33
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 15:57:36
+ * @LastEditTime: 2022-07-14 11:18:59
  */
 export namespace Table {
 	export interface Pageable {
@@ -51,7 +51,8 @@ export type SearchType =
 	| "date"
 	| "daterange"
 	| "timerange"
-	| "datetimerange";
+	| "datetimerange"
+	| "searchTool";
 
 export type TypeProp = "index" | "selection" | "expand";
 
