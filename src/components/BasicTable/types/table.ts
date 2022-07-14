@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-06 17:19:33
  * @LastEditors: hl
- * @LastEditTime: 2022-07-14 11:18:59
+ * @LastEditTime: 2022-07-14 16:47:13
  */
 export namespace Table {
 	export interface Pageable {
@@ -58,6 +58,8 @@ export type TypeProp = "index" | "selection" | "expand";
 
 export type FixedProp = "left" | "right";
 
+export type TableCellAlign = "left" | "center" | "right";
+
 export interface ColumnProps {
 	type: TypeProp; // index | selection | expand（特殊类型）
 	prop: string; // 单元格数据（非特殊类型必填）
@@ -73,4 +75,6 @@ export interface ColumnProps {
 	initSearchParam: string | number | boolean | any[]; // 搜索项初始值
 	enum: EnumProps[]; // 枚举类型（渲染值的字典）
 	readerHeader: (param: any) => any; // 自定义表头
+	align: TableCellAlign; // 显示位置。如果不配置，默认居中
+	money: boolean; // 是否是金额展示
 }

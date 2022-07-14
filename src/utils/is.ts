@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 15:50:42
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 16:53:05
+ * @LastEditTime: 2022-07-14 17:02:21
  */
 
 /**
@@ -24,4 +24,8 @@ export function isArray(val: any): val is Array<any> {
  */
 export function isFunction<T = Function>(val: unknown): val is T {
 	return is(val, "Function");
+}
+
+export function isNumber(val: unknown): val is number {
+	return is(val, "Number");
 }

@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 14:39:38
  * @LastEditors: hl
- * @LastEditTime: 2022-07-14 16:00:33
+ * @LastEditTime: 2022-07-14 17:17:55
 -->
 <template>
 	<div class="table-box">
@@ -42,6 +42,7 @@
 <script setup lang="ts" name="tableUseComponent">
 import { ref, reactive } from "vue";
 import { View, Delete, EditPen } from "@element-plus/icons-vue";
+import { ColumnProps } from "@/components/BasicTable/types/table";
 import { genderType } from "@/utils/serviceDict";
 import BasicTable from "@/components/BasicTable/index.vue";
 
@@ -50,7 +51,7 @@ const refBasicTable = ref();
 const initParam = reactive({ type: 1 });
 
 // 配置项
-const columns: Partial<any>[] = [
+const columns: Partial<ColumnProps>[] = [
 	{
 		type: "selection",
 		width: 42,
@@ -59,7 +60,7 @@ const columns: Partial<any>[] = [
 	{
 		type: "index",
 		label: "序号",
-		width: 60
+		width: 56
 	},
 	{
 		type: "expand",
@@ -70,13 +71,15 @@ const columns: Partial<any>[] = [
 		prop: "username",
 		label: "用户姓名",
 		search: true,
-		width: 135
+		align: "center",
+		width: 200
 	},
 	{
 		prop: "gender",
 		label: "性别",
 		width: "140",
 		enum: genderType,
+		align: "center",
 		search: true,
 		sortable: true,
 		searchType: "select"
@@ -85,24 +88,7 @@ const columns: Partial<any>[] = [
 		prop: "idCard",
 		label: "身份证号",
 		search: true,
-		width: 200
-	},
-	{
-		prop: "idCard",
-		label: "身份证号",
-		search: true,
-		width: 200
-	},
-	{
-		prop: "idCard",
-		label: "身份证号",
-		search: true,
-		width: 200
-	},
-	{
-		prop: "idCard",
-		label: "身份证号",
-		search: true,
+		align: "center",
 		width: 200
 	},
 	{
@@ -117,7 +103,8 @@ const columns: Partial<any>[] = [
 	{
 		prop: "email",
 		label: "邮箱",
-		search: true
+		search: true,
+		width: 360
 	},
 	{
 		prop: "address",
@@ -141,6 +128,7 @@ const columns: Partial<any>[] = [
 		prop: "operation",
 		label: "操作",
 		width: 330,
+		align: "center",
 		fixed: "right"
 	}
 ];

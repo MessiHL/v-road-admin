@@ -39,6 +39,7 @@
 					:label="item.label"
 					:width="item.width"
 					:fixed="item.fixed"
+					align="center"
 				>
 				</el-table-column>
 				<!-- expand（展开查看详情，请使用作用域插槽） -->
@@ -48,6 +49,7 @@
 					:label="item.label"
 					:width="item.width"
 					:fixed="item.fixed"
+					align="center"
 					v-slot="scope"
 				>
 					<slot :name="item.type" :row="scope.row"></slot>
@@ -55,6 +57,8 @@
 				<!-- other -->
 				<el-table-column
 					v-if="!item.type && item.prop && item.isShow"
+					header-align="center"
+					:align="item.money ? 'right' : item.align ? item.align : 'center'"
 					:prop="item.prop"
 					:label="item.label"
 					:width="item.width"
@@ -83,13 +87,19 @@
 							<!-- tag 标签（自带格式化内容） -->
 							<el-tag v-else-if="item.tag" :type="filterEnum(scope.row[item.prop!],item.enum,'tag')">
 								{{
-									item.enum?.length ? filterEnum(scope.row[item.prop!], item.enum) : defaultFormat(0, 0, scope.row[item.prop!])
+									item.enum?.length ? filterEnum(scope.row[item.prop!], item.enum) : defaultFormat(scope.row[item.prop!])
 								}}
 							</el-tag>
+							<!-- 金额，格式化 -->
+							<span v-else-if="item.money">
+								{{
+									formatMoney(scope.row[item.prop!])
+								}}
+							</span>
 							<!-- 文字（自带格式化内容） -->
 							<span v-else>
 								{{
-									item.enum?.length ? filterEnum(scope.row[item.prop!], item.enum) : defaultFormat(0, 0, scope.row[item.prop!])
+									item.enum?.length ? filterEnum(scope.row[item.prop!], item.enum) : defaultFormat(scope.row[item.prop!])
 								}}
 							</span>
 						</slot>
@@ -122,7 +132,7 @@ import { useSelection } from "./hooks/useSelection";
 import { useSearchForm } from "../SearchForm/hooks/userSearchForm";
 import { Refresh, Operation, Search } from "@element-plus/icons-vue";
 import { ColumnProps } from "@/components/BasicTable/types/table";
-import { filterEnum, defaultFormat } from "@/utils/util";
+import { filterEnum, defaultFormat, formatMoney } from "@/utils/util";
 import SearchForm from "@/components/SearchForm/index.vue";
 import Pagination from "@/components/Pagination/index.vue";
 import ColSetting from "./components/ColSetting.vue";
