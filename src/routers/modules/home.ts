@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-11 17:16:11
  * @LastEditors: hl
- * @LastEditTime: 2022-07-11 17:24:19
+ * @LastEditTime: 2022-07-15 09:34:33
  */
 import { RouteRecordRaw } from "vue-router";
 import { Layout } from "@/routers/constant";
@@ -17,7 +17,7 @@ const homeRouter: Array<RouteRecordRaw> = [
 			{
 				path: "index",
 				name: "home",
-				component: () => import("@/views/home/index.vue"),
+				component: () => import("@/views/base/home/index.vue"),
 				meta: {
 					keepAlive: true,
 					requiresAuth: true,

@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-11 17:52:29
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 14:42:38
+ * @LastEditTime: 2022-07-15 09:43:11
 -->
 <template>
 	<div
@@ -70,13 +70,18 @@ const getTestData = () => {
 		},
 		{
 			icon: "list",
-			title: "表格",
-			path: "/table",
+			title: "常用组件",
+			path: "/base",
 			children: [
 				{
-					path: "/table/useComponent",
-					title: "useComponent",
-					icon: "table"
+					path: "/base/table/useComponent",
+					title: "表格",
+					icon: "menu"
+				},
+				{
+					path: "/base/tree/index",
+					title: "树",
+					icon: "menu"
 				}
 			]
 		},

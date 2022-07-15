@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 14:39:38
  * @LastEditors: hl
- * @LastEditTime: 2022-07-14 17:17:55
+ * @LastEditTime: 2022-07-15 09:18:39
 -->
 <template>
 	<div class="table-box">
@@ -49,7 +49,6 @@ import BasicTable from "@/components/BasicTable/index.vue";
 import { getUserList } from "@/api/modules/user";
 const refBasicTable = ref();
 const initParam = reactive({ type: 1 });
-
 // 配置项
 const columns: Partial<ColumnProps>[] = [
 	{

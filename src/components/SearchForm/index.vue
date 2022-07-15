@@ -3,11 +3,11 @@
  * @Autor: hl
  * @Date: 2022-07-12 15:38:17
  * @LastEditors: hl
- * @LastEditTime: 2022-07-14 14:35:39
+ * @LastEditTime: 2022-07-15 09:19:08
 -->
 <template>
 	<div class="table-search" v-if="columns.length">
-		<el-form ref="formRef" :model="searchParam" :inline="true" label-width="120px">
+		<el-form ref="formRef" :model="searchParam" :inline="true" label-width="100px">
 			<el-row :gutter="10">
 				<template v-for="item in searchList" :key="item.prop">
 					<el-col :span="6">
@@ -72,7 +72,7 @@ onMounted(() => {
 });
 
 // 是否展开搜索项
-const searchShow = ref(true);
+const searchShow = ref(false);
 
 // 根据是否展开配置搜索项长度
 const searchList = computed((): Partial<ColumnProps>[] => {

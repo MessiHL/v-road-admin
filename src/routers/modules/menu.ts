@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 14:12:04
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 14:12:08
+ * @LastEditTime: 2022-07-15 09:34:52
  */
 import { RouteRecordRaw } from "vue-router";
 import { Layout } from "@/routers/constant";
@@ -21,7 +21,7 @@ const menuRouter: Array<RouteRecordRaw> = [
 			{
 				path: "/menu/menu1",
 				name: "menu1",
-				component: () => import("@/views/menu/menu1/index.vue"),
+				component: () => import("@/views/base/menu/menu1/index.vue"),
 				meta: {
 					keepAlive: true,
 					requiresAuth: true,
@@ -32,7 +32,7 @@ const menuRouter: Array<RouteRecordRaw> = [
 			{
 				path: "/menu/menu2/menu21",
 				name: "menu21",
-				component: () => import("@/views/menu/menu2/menu21/index.vue"),
+				component: () => import("@/views/base/menu/menu2/menu21/index.vue"),
 				meta: {
 					keepAlive: true,
 					requiresAuth: true,
@@ -43,7 +43,7 @@ const menuRouter: Array<RouteRecordRaw> = [
 			{
 				path: "/menu/menu2/menu22/menu221",
 				name: "menu221",
-				component: () => import("@/views/menu/menu2/menu22/menu221/index.vue"),
+				component: () => import("@/views/base/menu/menu2/menu22/menu221/index.vue"),
 				meta: {
 					keepAlive: true,
 					requiresAuth: true,
@@ -54,7 +54,7 @@ const menuRouter: Array<RouteRecordRaw> = [
 			{
 				path: "/menu/menu2/menu22/menu222",
 				name: "menu222",
-				component: () => import("@/views/menu/menu2/menu22/menu222/index.vue"),
+				component: () => import("@/views/base/menu/menu2/menu22/menu222/index.vue"),
 				meta: {
 					keepAlive: true,
 					requiresAuth: true,
@@ -65,7 +65,7 @@ const menuRouter: Array<RouteRecordRaw> = [
 			{
 				path: "/menu/menu2/menu23",
 				name: "menu23",
-				component: () => import("@/views/menu/menu2/menu23/index.vue"),
+				component: () => import("@/views/base/menu/menu2/menu23/index.vue"),
 				meta: {
 					keepAlive: true,
 					requiresAuth: true,
@@ -76,7 +76,7 @@ const menuRouter: Array<RouteRecordRaw> = [
 			{
 				path: "/menu/menu3",
 				name: "menu3",
-				component: () => import("@/views/menu/menu3/index.vue"),
+				component: () => import("@/views/base/menu/menu3/index.vue"),
 				meta: {
 					keepAlive: true,
 					requiresAuth: true,

@@ -172,6 +172,8 @@ const { selectionChange, getRowKeys, selectedListIds, isSelected } = useSelectio
 const { tableData, pageable, searchParam, initSearchParam, getTableList, search, reset, handleSizeChange, handleCurrentChange } =
 	useTable(props.requestApi, props.initParam, props.pagination);
 
+console.log(tableData, "@@.tableData");
+
 // 查询条件操作 Hooks
 const { setSearchTool } = useSearchForm();
 

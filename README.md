@@ -150,6 +150,16 @@ v-road-admin
 └─ vite.config.ts         # vite 配置
 ```
 
+```text
+views 目录结构
+| -base： 示例页面
+| -ctj:   项目相关页面
+|
+|
+ 
+```
+
+
 ### 八、浏览器支持
 
 > 默认支持以下浏览器，vue3.2 不支持 IE 浏览器。更多浏览器可以查看 [Can I Use Es Module](https://caniuse.com/?search=ESModule)
