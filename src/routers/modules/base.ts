@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 14:34:52
  * @LastEditors: hl
- * @LastEditTime: 2022-07-15 09:44:44
+ * @LastEditTime: 2022-07-15 10:38:27
  */
 import { RouteRecordRaw } from "vue-router";
 import { Layout } from "@/routers/constant";
@@ -36,6 +36,17 @@ const tableRouter: Array<RouteRecordRaw> = [
 					requiresAuth: true,
 					title: "树",
 					key: "treeDemo"
+				}
+			},
+			{
+				path: "/base/layout/index",
+				name: "layoutDemo",
+				component: () => import("@/views/base/layout/index.vue"),
+				meta: {
+					keepAlive: true,
+					requiresAuth: true,
+					title: "布局",
+					key: "layoutDemo"
 				}
 			}
 		]

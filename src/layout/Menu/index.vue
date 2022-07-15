@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-11 17:52:29
  * @LastEditors: hl
- * @LastEditTime: 2022-07-15 09:43:11
+ * @LastEditTime: 2022-07-15 10:36:40
 -->
 <template>
 	<div
@@ -41,6 +41,7 @@ import { loadingSvg } from "@/utils/svg";
 import { handleRouter } from "@/utils/util";
 import Logo from "./components/Logo.vue";
 import SubItem from "./components/SubItem.vue";
+import { getMenuList } from "./data";
 
 const route = useRoute();
 const menuStore = MenuStore();
@@ -51,7 +52,7 @@ onMounted(() => {
 	loading.value = true;
 	try {
 		// TODO 获取菜单
-		const data = getTestData();
+		const data = getMenuList();
 		const dynamicRouter = handleRouter(data);
 		authStore.setAuthRouter(dynamicRouter);
 		menuStore.setMenuList(data);
@@ -59,108 +60,6 @@ onMounted(() => {
 		loading.value = false;
 	}
 });
-
-// 测试数据
-const getTestData = () => {
-	return [
-		{
-			icon: "home-filled",
-			title: "首页",
-			path: "/home/index"
-		},
-		{
-			icon: "list",
-			title: "常用组件",
-			path: "/base",
-			children: [
-				{
-					path: "/base/table/useComponent",
-					title: "表格",
-					icon: "menu"
-				},
-				{
-					path: "/base/tree/index",
-					title: "树",
-					icon: "menu"
-				}
-			]
-		},
-		{
-			icon: "list",
-			title: "菜单嵌套",
-			path: "/menu",
-			children: [
-				{
-					path: "/menu/menu1",
-					title: "菜单1",
-					icon: "menu"
-				},
-				{
-					path: "/menu/menu2",
-					title: "菜单2",
-					icon: "menu",
-					children: [
-						{
-							path: "/menu/menu2/menu21",
-							title: "菜单2-1",
-							icon: "menu"
-						},
-						{
-							path: "/menu/menu2/menu22",
-							title: "菜单2-2",
-							icon: "menu",
-							children: [
-								{
-									path: "/menu/menu2/menu22/menu221",
-									title: "菜单2-2-1",
-									icon: "menu"
-								},
-								{
-									path: "/menu/menu2/menu22/menu222",
-									title: "菜单2-2-2",
-									icon: "menu"
-								}
-							]
-						},
-						{
-							path: "/menu/menu2/menu23",
-							title: "菜单2-3",
-							icon: "menu"
-						}
-					]
-				},
-				{
-					path: "/menu/menu3",
-					title: "菜单3",
-					icon: "menu"
-				}
-			]
-		},
-		{
-			icon: "warning-filled",
-			title: "错误页面",
-			path: "/error",
-			children: [
-				{
-					path: "/404",
-					title: "404页面",
-					icon: "menu"
-				},
-				{
-					path: "/403",
-					title: "403页面",
-					icon: "menu"
-				},
-				{
-					path: "/500",
-					title: "500页面",
-					icon: "menu"
-				}
-			]
-		}
-	];
-};
-
 const activeMenu = computed((): string => route.path);
 const isCollapse = computed((): boolean => menuStore.isCollapse);
 const menuList = computed((): Menu.MenuOptions[] => menuStore.menuList);
