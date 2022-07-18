@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 09:37:42
  * @LastEditors: hl
- * @LastEditTime: 2022-07-14 17:15:22
+ * @LastEditTime: 2022-07-18 09:14:19
  */
 import { isArray, isNumber } from "@/utils/is";
 /**
@@ -42,6 +42,16 @@ export function filterEnum(cellValue: any, enumData: any[] = [], type?: string):
 	let filterData = enumData.find(item => item.value === cellValue);
 	if (type == "tag") return filterData?.tagType ? filterData.tagType : "";
 	return filterData ? filterData.label : "";
+}
+/**
+ * @description 根据枚举列表查询当需要的数据颜色
+ * @param {String} cellValue 当前单元格值
+ * @param {Array} enumData 枚举列表
+ * @return string
+ * */
+export function filterEnumColor(cellValue: any, enumData: any[] = []): string {
+	let fitlerData = enumData.find(item => item.value === cellValue);
+	return fitlerData ? fitlerData.color : "";
 }
 
 /**

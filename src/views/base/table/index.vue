@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 14:39:38
  * @LastEditors: hl
- * @LastEditTime: 2022-07-15 09:18:39
+ * @LastEditTime: 2022-07-18 09:25:51
 -->
 <template>
 	<div class="table-box">
@@ -40,7 +40,7 @@
 	</div>
 </template>
 <script setup lang="ts" name="tableUseComponent">
-import { ref, reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
 import { View, Delete, EditPen } from "@element-plus/icons-vue";
 import { ColumnProps } from "@/components/BasicTable/types/table";
 import { genderType } from "@/utils/serviceDict";
@@ -137,6 +137,10 @@ const batchDelete = (ids: string[]) => {
 	console.log(ids);
 	refBasicTable.value.refresh();
 };
+
+onMounted(() => {
+	refBasicTable.value.refresh();
+});
 
 const openDrawer = (title: string, row: any) => {
 	console.log(title, row.username);

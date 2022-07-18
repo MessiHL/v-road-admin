@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 15:38:17
  * @LastEditors: hl
- * @LastEditTime: 2022-07-14 11:20:21
+ * @LastEditTime: 2022-07-18 09:20:10
 -->
 <template>
 	<!-- 文本框 -->
@@ -20,6 +20,7 @@
 		>
 			<el-option
 				v-for="itemValue in item.enum"
+				:style="`color:${filterEnumColor(itemValue.value, item.enum)}`"
 				:key="itemValue.value"
 				:label="itemValue.label"
 				:value="itemValue.value"
@@ -81,6 +82,7 @@
 
 <script setup lang="ts" name="searchFormItem">
 import { ColumnProps } from "@/components/BasicTable/types/table";
+import { filterEnumColor } from "@/utils/util";
 
 interface SearchFormItem {
 	item: Partial<ColumnProps>; // 具体每一个搜索项的配置

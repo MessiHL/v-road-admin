@@ -97,7 +97,7 @@
 								}}
 							</span>
 							<!-- 文字（自带格式化内容） -->
-							<span v-else>
+							<span v-else :style="`color:${filterEnumColor(scope.row[item.prop!], item.enum)}`">
 								{{
 									item.enum?.length ? filterEnum(scope.row[item.prop!], item.enum) : defaultFormat(scope.row[item.prop!])
 								}}
@@ -132,7 +132,7 @@ import { useSelection } from "./hooks/useSelection";
 import { useSearchForm } from "../SearchForm/hooks/userSearchForm";
 import { Refresh, Operation, Search } from "@element-plus/icons-vue";
 import { ColumnProps } from "@/components/BasicTable/types/table";
-import { filterEnum, defaultFormat, formatMoney } from "@/utils/util";
+import { filterEnum, filterEnumColor, defaultFormat, formatMoney } from "@/utils/util";
 import SearchForm from "@/components/SearchForm/index.vue";
 import Pagination from "@/components/Pagination/index.vue";
 import ColSetting from "./components/ColSetting.vue";
@@ -171,8 +171,6 @@ const { selectionChange, getRowKeys, selectedListIds, isSelected } = useSelectio
 // 表格操作 Hooks
 const { tableData, pageable, searchParam, initSearchParam, getTableList, search, reset, handleSizeChange, handleCurrentChange } =
 	useTable(props.requestApi, props.initParam, props.pagination);
-
-console.log(tableData, "@@.tableData");
 
 // 查询条件操作 Hooks
 const { setSearchTool } = useSearchForm();
