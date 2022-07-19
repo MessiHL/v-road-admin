@@ -4,7 +4,7 @@ import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
  * @Autor: hl
  * @Date: 2022-07-11 15:19:51
  * @LastEditors: hl
- * @LastEditTime: 2022-07-12 09:52:33
+ * @LastEditTime: 2022-07-18 14:22:31
  */
 // * 导入所有router
 const metaRouters = import.meta.globEager("./modules/*.ts");
@@ -22,14 +22,19 @@ const routes: RouteRecordRaw[] = [
 	{
 		path: "/login",
 		name: "login",
-		component: () => import("@/views/login/index.vue"),
+		component: () => import("@/views/base/login/index.vue"),
 		meta: {
 			requiresAuth: false,
 			title: "登录页",
 			key: "login"
 		}
 	},
-	...routerArray
+	...routerArray,
+	{
+		// 找不到路由重定向到404页面
+		path: "/:pathMatch(.*)",
+		redirect: { name: "404" }
+	}
 ];
 
 const router = createRouter({

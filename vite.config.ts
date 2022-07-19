@@ -9,10 +9,6 @@ import VueSetupExtend from "vite-plugin-vue-setup-extend";
 import eslintPlugin from "vite-plugin-eslint";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import importToCDN from "vite-plugin-cdn-import";
-// import AutoImport from "unplugin-auto-import/vite";
-// import Components from "unplugin-vue-components/vite";
-// import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
-
 // @see: https://vitejs.dev/config/
 export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 	const env = loadEnv(mode, process.cwd());
@@ -45,10 +41,20 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			// 代理跨域（mock 不需要配置，这里只是个事列）
 			proxy: {
 				"/api": {
-					// target: "https://www.fastmock.site/mock/f81e8333c1a9276214bcdbc170d9e0a0", // fastmock
 					target: "https://mock.mengxuegu.com/mock/629d727e6163854a32e8307e", // easymock
 					changeOrigin: true,
 					rewrite: path => path.replace(/^\/api/, "")
+				},
+				"/one-card-pass-server": {
+					target: "http://192.168.1.118:18080", //
+					changeOrigin: true,
+					rewrite: path => path.replace(/^\/one-card-pass-server/, "")
+				},
+				"/yn-realpay-server": {
+					// secure: false, // 如果是https接口，需要配置这个参数
+					target: "http://192.168.1.118:18002",
+					changeOrigin: true,
+					rewrite: path => path.replace(/^\/yn-realpay-server/, "")
 				}
 			}
 		},
@@ -68,30 +74,9 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
 			vueJsx(),
 			// * name 可以写在 script 标签上
 			VueSetupExtend(),
-			// * demand import element(如果使用了cdn引入,没必要使用element自动导入了)
-			// AutoImport({
-			// 	resolvers: [ElementPlusResolver()]
-			// }),
-			// Components({
-			// 	resolvers: [ElementPlusResolver()]
-			// }),
-			// * cdn 引入（vue、element-plus）
+
 			importToCDN({
-				modules: [
-					// vue按需引入会导致依赖vue的插件出现问题(列如:pinia/vuex)
-					// {
-					// 	name: "vue",
-					// 	var: "Vue",
-					// 	path: "https://unpkg.com/vue@next"
-					// },
-					// 使用cdn引入element-plus时,开发环境还是需要在main.js中引入element-plus,可以不用引入css
-					// {
-					// 	name: "element-plus",
-					// 	var: "ElementPlus",
-					// 	path: "https://unpkg.com/element-plus",
-					// 	css: "https://unpkg.com/element-plus/dist/index.css"
-					// }
-				]
+				modules: []
 			}),
 			// * 是否生成包预览
 			viteEnv.VITE_REPORT && visualizer(),

@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-15 10:34:13
  * @LastEditors: hl
- * @LastEditTime: 2022-07-15 10:36:35
+ * @LastEditTime: 2022-07-19 10:27:32
  */
 export const getMenuList = () => {
 	return [
@@ -30,6 +30,18 @@ export const getMenuList = () => {
 				{
 					path: "/base/layout/index",
 					title: "布局",
+					icon: "menu"
+				}
+			]
+		},
+		{
+			icon: "list",
+			title: "http",
+			path: "/api",
+			children: [
+				{
+					path: "/base/api/index",
+					title: "proxy测试",
 					icon: "menu"
 				}
 			]

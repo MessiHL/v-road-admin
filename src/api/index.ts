@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 16:44:01
  * @LastEditors: hl
- * @LastEditTime: 2022-07-15 09:04:56
+ * @LastEditTime: 2022-07-19 15:46:53
  */
 import axios, { AxiosInstance, AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import { showFullScreenLoading, tryHideFullScreenLoading } from "@/config/serviceLoading";
@@ -75,8 +75,6 @@ class RequestHttp {
 					ElMessage.error(data.msg);
 					return Promise.reject(data);
 				}
-				// * 成功请求
-				console.log("service.interceptors.response:", data);
 
 				return data;
 			},
