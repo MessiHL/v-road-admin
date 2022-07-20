@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 09:37:42
  * @LastEditors: hl
- * @LastEditTime: 2022-07-20 11:24:55
+ * @LastEditTime: 2022-07-20 18:08:13
  */
 import { isArray, isNumber } from "@/utils/is";
 /**
@@ -71,21 +71,29 @@ export function formatMoney(cellValue: any) {
 /**
  * @description 行政区划数据重构
  * @param {any[]} src 数据源
+ * @param {string} parentIdField 存储父节点id的字段名称(默认 'pid' )
+ * @param {string} labelField 存储子节点显示文本的字段名称(默认 'text' )
+ * @param {string} childrenField 存储父子节点集合的字段名称(默认 'children' )
  * @return {any[]} dist 处理结果
  * */
-export function rebuildAgencyTreeData(src: any[]) {
+export function rebuildAgencyTreeData(
+	src: any[],
+	parentIdField: string = "pid",
+	labelField: string = "text",
+	childrenField: string = "children"
+) {
 	if (src.length === 0) return src;
 	let dist: any[] = [];
 	let srcMap: any = new Map();
 	src.forEach(item => (srcMap[item.id] = item));
 	src.forEach(item => {
-		let pNode = srcMap[item.pid];
-		item.label = item.text;
+		let pNode = srcMap[item[parentIdField]];
+		item.label = item[labelField];
 		// 遍历原数据src，依据数据项的父id在map中查找，如果在map中能查到数据，则说明当前数据项属于子节点，否则为父节点
 		if (pNode) {
 			// 子节点
-			if (!pNode.children) pNode.children = [];
-			pNode.children.push(item);
+			if (!pNode[childrenField]) pNode[childrenField] = [];
+			pNode[childrenField].push(item);
 		} else {
 			// 父节点
 			dist.push(item);
