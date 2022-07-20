@@ -3,7 +3,7 @@
  * @Autor: hl
  * @Date: 2022-07-12 09:37:42
  * @LastEditors: hl
- * @LastEditTime: 2022-07-18 09:14:19
+ * @LastEditTime: 2022-07-20 11:24:55
  */
 import { isArray, isNumber } from "@/utils/is";
 /**
@@ -66,4 +66,30 @@ export function formatMoney(cellValue: any) {
 	} else {
 		return cellValue;
 	}
+}
+
+/**
+ * @description 行政区划数据重构
+ * @param {any[]} src 数据源
+ * @return {any[]} dist 处理结果
+ * */
+export function rebuildAgencyTreeData(src: any[]) {
+	if (src.length === 0) return src;
+	let dist: any[] = [];
+	let srcMap: any = new Map();
+	src.forEach(item => (srcMap[item.id] = item));
+	src.forEach(item => {
+		let pNode = srcMap[item.pid];
+		item.label = item.text;
+		// 遍历原数据src，依据数据项的父id在map中查找，如果在map中能查到数据，则说明当前数据项属于子节点，否则为父节点
+		if (pNode) {
+			// 子节点
+			if (!pNode.children) pNode.children = [];
+			pNode.children.push(item);
+		} else {
+			// 父节点
+			dist.push(item);
+		}
+	});
+	return dist;
 }
