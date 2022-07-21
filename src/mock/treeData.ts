@@ -32922,3 +32922,380 @@ export const traaData2 = {
     }
   ]
 }
+
+
+export const treeSelectData = {
+  status_code: '200',
+  reason: '成功',
+  data: [
+    {
+      id: 'DCCFFA83-90D3-404F-90EC-6CD0BCCB1D01',
+      name: '政府预算资金',
+      code: '1',
+      code_name: '1 政府预算资金',
+      parent_id: '0',
+      level_no: null
+    },
+    {
+      id: 'C7F66887-006A-4B14-99A9-436EE015F3F0',
+      name: '一般公共预算资金',
+      code: '11',
+      code_name: '11 一般公共预算资金',
+      parent_id: 'DCCFFA83-90D3-404F-90EC-6CD0BCCB1D01',
+      level_no: null
+    },
+    {
+      id: '955FB1C9-E6CF-4BBA-9E09-B6C21803D2A7',
+      name: '一般公共预算资金',
+      code: '111',
+      code_name: '111 一般公共预算资金',
+      parent_id: 'C7F66887-006A-4B14-99A9-436EE015F3F0',
+      level_no: null
+    },
+    {
+      id: '283D462C-0D30-40AB-9673-74757C4932B3',
+      name: '本级财力安排',
+      code: '1111',
+      code_name: '1111 本级财力安排',
+      parent_id: '955FB1C9-E6CF-4BBA-9E09-B6C21803D2A7',
+      level_no: null
+    },
+    {
+      id: '615D58C7-14CB-4B7A-BEBE-6C92EE217463',
+      name: '专项收入安排',
+      code: '1112',
+      code_name: '1112 专项收入安排',
+      parent_id: '955FB1C9-E6CF-4BBA-9E09-B6C21803D2A7',
+      level_no: null
+    },
+    {
+      id: '1622038B-1E53-4759-A81C-83CA3E78F465',
+      name: '执法办案补助',
+      code: '1113',
+      code_name: '1113 执法办案补助',
+      parent_id: '955FB1C9-E6CF-4BBA-9E09-B6C21803D2A7',
+      level_no: null
+    },
+    {
+      id: 'BD517560-0D7C-48E6-9E28-F42984DFB41B',
+      name: '收费成本补助',
+      code: '1114',
+      code_name: '1114 收费成本补助',
+      parent_id: '955FB1C9-E6CF-4BBA-9E09-B6C21803D2A7',
+      level_no: null
+    },
+    {
+      id: '4F3C00F2-9A58-4621-860D-FA6A87366F58',
+      name: '国有资源（资产）有偿使用补助',
+      code: '1115',
+      code_name: '1115 国有资源（资产）有偿使用补助',
+      parent_id: '955FB1C9-E6CF-4BBA-9E09-B6C21803D2A7',
+      level_no: null
+    },
+    {
+      id: '9C1D55DB-DCB9-4B74-8541-0B9E56AF62DF',
+      name: '上级补助',
+      code: '1116',
+      code_name: '1116 上级补助',
+      parent_id: '955FB1C9-E6CF-4BBA-9E09-B6C21803D2A7',
+      level_no: null
+    },
+    {
+      id: '1C94E27C-25FF-4FBD-B3B7-A48CCE4B3FB3',
+      name: '一般债券',
+      code: '112',
+      code_name: '112 一般债券',
+      parent_id: 'C7F66887-006A-4B14-99A9-436EE015F3F0',
+      level_no: null
+    },
+    {
+      id: '2AE3FB24-A78F-46B3-B955-E230E68C3429',
+      name: '外国政府和国际组织贷款',
+      code: '113',
+      code_name: '113 外国政府和国际组织贷款',
+      parent_id: 'C7F66887-006A-4B14-99A9-436EE015F3F0',
+      level_no: null
+    },
+    {
+      id: 'E6164E80-A550-4061-96E5-8930FDA6A7E4',
+      name: '外国政府和国际组织赠款',
+      code: '114',
+      code_name: '114 外国政府和国际组织赠款',
+      parent_id: 'C7F66887-006A-4B14-99A9-436EE015F3F0',
+      level_no: null
+    },
+    {
+      id: '1F2FE689-056C-4B6E-A659-7DD280CA9B04',
+      name: '政府性基金预算资金',
+      code: '12',
+      code_name: '12 政府性基金预算资金',
+      parent_id: 'DCCFFA83-90D3-404F-90EC-6CD0BCCB1D01',
+      level_no: null
+    },
+    {
+      id: 'BE81B364-0755-44C9-A118-212CDC254D1D',
+      name: '政府性基金预算资金',
+      code: '121',
+      code_name: '121 政府性基金预算资金',
+      parent_id: '1F2FE689-056C-4B6E-A659-7DD280CA9B04',
+      level_no: null
+    },
+    {
+      id: '9A3D0D30-89CD-493F-8BB7-4DC37F71BFE8',
+      name: '本级财力安排',
+      code: '1211',
+      code_name: '1211 本级财力安排',
+      parent_id: 'BE81B364-0755-44C9-A118-212CDC254D1D',
+      level_no: null
+    },
+    {
+      id: '5201550C-8BF7-4200-82E2-BE28A97E5BB6',
+      name: '上级补助',
+      code: '1212',
+      code_name: '1212 上级补助',
+      parent_id: 'BE81B364-0755-44C9-A118-212CDC254D1D',
+      level_no: null
+    },
+    {
+      id: '16904C5A-291B-4591-8561-03A2F869B182',
+      name: '专项债券',
+      code: '122',
+      code_name: '122 专项债券',
+      parent_id: '1F2FE689-056C-4B6E-A659-7DD280CA9B04',
+      level_no: null
+    },
+    {
+      id: '0D553283-A6FE-463F-856C-BA16605A0145',
+      name: '国有资本经营预算资金',
+      code: '13',
+      code_name: '13 国有资本经营预算资金',
+      parent_id: 'DCCFFA83-90D3-404F-90EC-6CD0BCCB1D01',
+      level_no: null
+    },
+    {
+      id: '8E3B65BE-4096-43B8-995C-C38BEB5C5627',
+      name: '社会保险基金预算资金',
+      code: '14',
+      code_name: '14 社会保险基金预算资金',
+      parent_id: 'DCCFFA83-90D3-404F-90EC-6CD0BCCB1D01',
+      level_no: null
+    },
+    {
+      id: 'F92141F3-A0F8-4EB3-AD50-28E6A8756D81',
+      name: '财政专户管理资金',
+      code: '2',
+      code_name: '2 财政专户管理资金',
+      parent_id: '0',
+      level_no: null
+    },
+    {
+      id: '80A82A89-9B87-42A0-80E0-CE9892CAA850',
+      name: '常规类财政专户管理资金',
+      code: '21',
+      code_name: '21 常规类财政专户管理资金',
+      parent_id: 'F92141F3-A0F8-4EB3-AD50-28E6A8756D81',
+      level_no: null
+    },
+    {
+      id: '53751FCE-811B-4EFC-99CB-436422BC41B5',
+      name: '非税收入专户管理资金',
+      code: '211',
+      code_name: '211 非税收入专户管理资金',
+      parent_id: '80A82A89-9B87-42A0-80E0-CE9892CAA850',
+      level_no: null
+    },
+    {
+      id: 'F8C6B511-D5F8-49B8-B0A7-E6A42619CF6C',
+      name: '偿债准备金',
+      code: '212',
+      code_name: '212 偿债准备金',
+      parent_id: '80A82A89-9B87-42A0-80E0-CE9892CAA850',
+      level_no: null
+    },
+    {
+      id: '7FCD1AF0-E682-4178-9214-0F28D8A3866F',
+      name: '社会保险基金',
+      code: '213',
+      code_name: '213 社会保险基金',
+      parent_id: '80A82A89-9B87-42A0-80E0-CE9892CAA850',
+      level_no: null
+    },
+    {
+      id: 'B0F8D6B9-F2A4-47C2-9B09-DFC6EFC48BAB',
+      name: '国际贷赠款',
+      code: '214',
+      code_name: '214 国际贷赠款',
+      parent_id: '80A82A89-9B87-42A0-80E0-CE9892CAA850',
+      level_no: null
+    },
+    {
+      id: '9542B454-7839-49E3-8366-6552BCFEAEAB',
+      name: '事业收入',
+      code: '215',
+      code_name: '215 事业收入',
+      parent_id: '80A82A89-9B87-42A0-80E0-CE9892CAA850',
+      level_no: null
+    },
+    {
+      id: 'B3016F3A-80B6-4320-967E-D623A643DDB1',
+      name: '代管资金',
+      code: '216',
+      code_name: '216 代管资金',
+      parent_id: '80A82A89-9B87-42A0-80E0-CE9892CAA850',
+      level_no: null
+    },
+    {
+      id: '5D868097-1DBE-4518-A999-D1FC862E26B0',
+      name: '外币',
+      code: '217',
+      code_name: '217 外币',
+      parent_id: '80A82A89-9B87-42A0-80E0-CE9892CAA850',
+      level_no: null
+    },
+    {
+      id: 'B4547809-F310-45A5-9965-8B2432799834',
+      name: '专项支出类财政专户管理资金（一）',
+      code: '22',
+      code_name: '22 专项支出类财政专户管理资金（一）',
+      parent_id: 'F92141F3-A0F8-4EB3-AD50-28E6A8756D81',
+      level_no: null
+    },
+    {
+      id: '5425D9DB-ADB0-48CF-8399-E51F08853180',
+      name: '粮食风险基金',
+      code: '221',
+      code_name: '221 粮食风险基金',
+      parent_id: 'B4547809-F310-45A5-9965-8B2432799834',
+      level_no: null
+    },
+    {
+      id: '682C3994-BA7E-4331-906E-40CF00A16BF0',
+      name: '扶贫资金',
+      code: '222',
+      code_name: '222 扶贫资金',
+      parent_id: 'B4547809-F310-45A5-9965-8B2432799834',
+      level_no: null
+    },
+    {
+      id: '0277F76D-E0E6-4FC2-8EAF-E6405547D9AD',
+      name: '亚行贷款农业综合开发资金及地方财政配套资金',
+      code: '223',
+      code_name: '223 亚行贷款农业综合开发资金及地方财政配套资金',
+      parent_id: 'B4547809-F310-45A5-9965-8B2432799834',
+      level_no: null
+    },
+    {
+      id: '6CE3DC42-0965-4D0E-8956-FBCC8C7DCE66',
+      name: '中央专项资金',
+      code: '224',
+      code_name: '224 中央专项资金',
+      parent_id: 'B4547809-F310-45A5-9965-8B2432799834',
+      level_no: null
+    },
+    {
+      id: '8A6EAF1D-6E3F-4EF2-8B6E-5DE8DF2C4029',
+      name: '专项支出类财政专户管理资金（二）',
+      code: '23',
+      code_name: '23 专项支出类财政专户管理资金（二）',
+      parent_id: 'F92141F3-A0F8-4EB3-AD50-28E6A8756D81',
+      level_no: null
+    },
+    {
+      id: '612BCA2C-D2DC-430E-A9D4-5ECD0C639387',
+      name: '国有土地上房屋征收补偿费用专户',
+      code: '231',
+      code_name: '231 国有土地上房屋征收补偿费用专户',
+      parent_id: '8A6EAF1D-6E3F-4EF2-8B6E-5DE8DF2C4029',
+      level_no: null
+    },
+    {
+      id: '5467F833-5316-4B44-8328-56E73064D2D5',
+      name: '农村中小学教师工资',
+      code: '232',
+      code_name: '232 农村中小学教师工资',
+      parent_id: '8A6EAF1D-6E3F-4EF2-8B6E-5DE8DF2C4029',
+      level_no: null
+    },
+    {
+      id: '385C8AC6-9BD2-422A-A447-740754D15F58',
+      name: '农村计划生育家庭奖励扶助金',
+      code: '233',
+      code_name: '233 农村计划生育家庭奖励扶助金',
+      parent_id: '8A6EAF1D-6E3F-4EF2-8B6E-5DE8DF2C4029',
+      level_no: null
+    },
+    {
+      id: '5D80953B-F64A-4680-9043-5C899529E9A9',
+      name: '被征地农民社会保障资金',
+      code: '234',
+      code_name: '234 被征地农民社会保障资金',
+      parent_id: '8A6EAF1D-6E3F-4EF2-8B6E-5DE8DF2C4029',
+      level_no: null
+    },
+    {
+      id: '16316AFE-F7CD-4A70-9441-F145BBF50446',
+      name: '土地补偿和安置补助费',
+      code: '235',
+      code_name: '235 土地补偿和安置补助费',
+      parent_id: '8A6EAF1D-6E3F-4EF2-8B6E-5DE8DF2C4029',
+      level_no: null
+    },
+    {
+      id: 'A44CE837-6B3A-437A-B7CE-117985CE2F25',
+      name: '大中型水利水电工程建设征地补偿和移民安置资金',
+      code: '236',
+      code_name: '236 大中型水利水电工程建设征地补偿和移民安置资金',
+      parent_id: '8A6EAF1D-6E3F-4EF2-8B6E-5DE8DF2C4029',
+      level_no: null
+    },
+    {
+      id: 'CFB8798B-8590-42B4-9193-E9DEB1C69E16',
+      name: '单位资金',
+      code: '3',
+      code_name: '3 单位资金',
+      parent_id: '0',
+      level_no: null
+    },
+    {
+      id: '33801667-929B-4629-B397-F4F583C419C2',
+      name: '事业收入资金',
+      code: '31',
+      code_name: '31 事业收入资金',
+      parent_id: 'CFB8798B-8590-42B4-9193-E9DEB1C69E16',
+      level_no: null
+    },
+    {
+      id: 'D765A5A5-E0ED-42AF-9409-FD5B6CD2B1C3',
+      name: '上级补助收入资金',
+      code: '32',
+      code_name: '32 上级补助收入资金',
+      parent_id: 'CFB8798B-8590-42B4-9193-E9DEB1C69E16',
+      level_no: null
+    },
+    {
+      id: '9B1C2EC7-9EBA-4B05-AA55-F0D2FB866631',
+      name: '附属单位上缴收入资金',
+      code: '33',
+      code_name: '33 附属单位上缴收入资金',
+      parent_id: 'CFB8798B-8590-42B4-9193-E9DEB1C69E16',
+      level_no: null
+    },
+    {
+      id: 'C0429852-4A51-45BA-8F17-69CCF1380050',
+      name: '事业单位经营收入资金',
+      code: '34',
+      code_name: '34 事业单位经营收入资金',
+      parent_id: 'CFB8798B-8590-42B4-9193-E9DEB1C69E16',
+      level_no: null
+    },
+    {
+      id: '5A70ED0A-698E-4163-B91F-CBD1848404BD',
+      name: '其他收入资金',
+      code: '39',
+      code_name: '39 其他收入资金',
+      parent_id: 'CFB8798B-8590-42B4-9193-E9DEB1C69E16',
+      level_no: null
+    }
+  ],
+  traceId: '8bc12cdf9d008e8f'
+}

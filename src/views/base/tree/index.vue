@@ -3,27 +3,30 @@
  * @Autor: hl
  * @Date: 2022-07-15 09:30:39
  * @LastEditors: hl
- * @LastEditTime: 2022-07-20 18:04:43
+ * @LastEditTime: 2022-07-21 16:00:59
 -->
 <template>
 	<el-row :gutter="20">
 		<el-col :span="6">
-			<e-card class="basic-card">
-				<BasicTree :regiester="regiester1"></BasicTree>
-			</e-card>
+			<BasicTree ref="refBasicTree1" :regiester="regiester1"></BasicTree>
 		</el-col>
 		<el-col :span="6">
-			<e-card class="basic-card">
-				<BasicTree :regiester="regiester2" parentIdField="parent_id" labelField="name"></BasicTree>
-			</e-card>
+			<BasicTree ref="refBasicTree2" :regiester="regiester2"></BasicTree>
+		</el-col>
+		<el-col :span="6">
+			<BasicTreeSelect ref="refBasicTree3" :regiester="regiester3"></BasicTreeSelect>
 		</el-col>
 	</el-row>
 </template>
 <script setup lang="ts" name="TreeDemo">
+import { ref, onMounted } from "vue";
 import BasicTree from "@/components/BasicTree/index.vue";
+import BasicTreeSelect from "@/components/BasicTree/BasicTreeSelect.vue";
 
-import { treeData1, traaData2 } from "@/mock/treeData";
-
+import { treeData1, traaData2, treeSelectData } from "@/mock/treeData";
+const refBasicTree1 = ref();
+const refBasicTree2 = ref();
+const refBasicTree3 = ref();
 const regiester1 = {
 	data: treeData1.data[0].children,
 	labelField: "text",
@@ -37,13 +40,24 @@ const regiester2 = {
 	labelField: "name",
 	showCheckbox: true
 };
+
+const regiester3 = {
+	data: treeSelectData.data,
+	parentIdField: "parent_id",
+	labelField: "code_name",
+	showCheckbox: true
+};
+
+onMounted(() => {
+	//  数据初始化
+	// refBasicTree1.value.refresh();
+	// refBasicTree2.value.refresh();
+	refBasicTree3.value.refresh();
+});
 </script>
 <style lang="scss" scoped>
 .el-col {
 	height: 100%;
 	overflow: auto;
-	.basic-card {
-		height: 100%;
-	}
 }
 </style>
